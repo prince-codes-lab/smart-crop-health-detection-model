@@ -25,47 +25,42 @@ h1, h2, h3 {
 
 /* Form section layout */
 .form-section {
+  margin-bottom: 40px;
+}
+
+/* Grid layout for form fields */
+form {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
-  align-items: center;
-  margin-bottom: 2rem;
   padding: 0 20px;
 }
 
-/* Ensure headings are outside the grid */
-.form-section > h2 {
-  grid-column: 1 / -1; /* span full width */
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-
-/* Label + Input alignment */
+/* Label + Input pair */
 .form-group {
-  display: contents;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Label styling */
 .form-label {
-  grid-column: 1;
   font-weight: 600;
-  text-align: right;
+  margin-bottom: 6px;
   color: #333;
 }
 
+/* Input styling */
 .form-input {
-  grid-column: 2;
-  padding: 10px 14px;
+  padding: 12px 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
+  box-sizing: border-box;
 }
 
-/* Button alignment */
+/* Button styling */
 .form-button {
-  grid-column: 2;
-  justify-self: start;
   padding: 12px 16px;
   border: none;
   border-radius: 8px;
@@ -75,7 +70,9 @@ h1, h2, h3 {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .form-button:hover {
