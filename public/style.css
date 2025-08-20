@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-/* Main container */
+/* Container */
 .container {
   max-width: 800px;
   margin: 40px auto;
@@ -23,33 +23,26 @@ h1, h2, h3 {
   margin-bottom: 20px;
 }
 
-/* Form layout */
-.form-section {
-  margin-bottom: 30px;
-}
-
-.form-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
+/* Form section layout */
 .form-section {
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 1rem;
   align-items: center;
   margin-bottom: 2rem;
+  padding: 0 20px; /* Prevent edge contact */
 }
 
-/* Each label-input pair */
+/* Label + Input alignment */
 .form-group {
-  display: contents; /* allows children to inherit grid layout */
+  display: contents;
 }
 
 .form-label {
   grid-column: 1;
   font-weight: 600;
   text-align: right;
+  color: #333;
 }
 
 .form-input {
@@ -61,7 +54,7 @@ h1, h2, h3 {
   width: 100%;
 }
 
-/* Button aligned with inputs */
+/* Button alignment */
 .form-button {
   grid-column: 2;
   justify-self: start;
@@ -74,6 +67,7 @@ h1, h2, h3 {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 .form-button:hover {
