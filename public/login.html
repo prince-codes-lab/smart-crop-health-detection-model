@@ -1,0 +1,23 @@
+<form id="loginForm">
+  <input type="text" name="name" placeholder="Name" />
+  <input type="password" name="password" placeholder="Password" />
+  <button type="submit">Login</button>
+</form>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const res = await fetch('/api/farmers/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.name.value,
+        password: form.password.value
+      })
+    });
+    const result = await res.json();
+    if (result.success) alert('Login successful!');
+    else alert('Login failed.');
+  });
+</script>
+

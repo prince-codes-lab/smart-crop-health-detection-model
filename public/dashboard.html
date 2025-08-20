@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Farm Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📈 Smart Farm Dashboard</h1>
+  </header>
+
+  <section class="module">
+    <h2>Sensor Trends</h2>
+    <canvas id="sensorChart"></canvas>
+  </section>
+
+  <section class="module">
+    <h2>Crop Health Status</h2>
+    <div id="healthSummary"></div>
+    <a href="/api/sensors/export/csv" download="sensor_data.csv">📥 Download Sensor Data (CSV)</a>
+  </section>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

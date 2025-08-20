@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Farm Dashboard</title> 
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌾 Smart Farm Monitoring</h1>
+  </header>
+
+  <main class="container">
+    <!-- Sensor Data Collection -->
+    <section class="form-section" id="sensor-module">
+      <h2>Sensor Data Collection</h2>
+      <form id="sensor-form">
+        <div class="form-group">
+          <label for="temperature" class="form-label">Temperature (°C):</label>
+          <input type="text" id="temperature" name="temperature" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="humidity" class="form-label">Humidity (%):</label>
+          <input type="text" id="humidity" name="humidity" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="moisture" class="form-label">Soil Moisture (%):</label>
+          <input type="text" id="moisture" name="moisture" class="form-input">
+        </div>
+
+        <button type="submit" class="form-button">Submit Sensor Data</button>
+      </form>
+    </section>
+
+    <!-- Image Acquisition & Processing -->
+    <section class="form-section" id="image-module">
+      <h2>Image Acquisition & Processing</h2>
+      <input type="file" id="crop-image" accept="image/*" class="form-input" />
+      <button type="button" class="form-button" onclick="analyzeImage()">Analyze Image</button>
+      <div id="image-preview"></div>
+      <div id="analysis-result"></div>
+    </section>
+
+    <!-- Crop Health Analysis -->
+    <section class="form-section" id="ml-module">
+      <h2>Crop Health Analysis</h2>
+      <button type="button" class="form-button" onclick="runML()">Run Machine Learning Analysis</button>
+      <div id="ml-result"></div>
+    </section>
+
+    <!-- Farmer Registration -->
+    <section class="form-section" id="farmer-module">
+      <h2>Register Farmer</h2>
+      <form id="farmer-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" name="name" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="location" class="form-label">Location:</label>
+          <input type="text" id="location" name="location" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label for="contact" class="form-label">Contact:</label>
+          <input type="text" id="contact" name="contact" class="form-input">
+        </div>
+
+        <button type="submit" class="form-button">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <canvas id="particle-canvas"></canvas>
+</body>
+</html>
