@@ -30,8 +30,16 @@ h1, h2, h3 {
   gap: 1rem;
   align-items: center;
   margin-bottom: 2rem;
-  padding: 0 20px; /* Prevent edge contact */
+  padding: 0 20px;
 }
+
+/* Ensure headings are outside the grid */
+.form-section > h2 {
+  grid-column: 1 / -1; /* span full width */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 
 /* Label + Input alignment */
 .form-group {
